@@ -17,6 +17,7 @@ class MyAlertBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(8.0) ),
       backgroundColor: Colors.grey[900],
       content: TextField(
         controller: controller,
@@ -24,28 +25,27 @@ class MyAlertBox extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey[600]),
-          enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white)),
-          focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white)),
+          border: const UnderlineInputBorder(),
         ),
       ),
       actions: [
         MaterialButton(
+          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(5.0) ),
           onPressed: onSave,
-          child: Text(
+          color: Colors.white,
+          child: const Text(
             "Save",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.black),
           ),
-          color: Colors.black,
         ),
         MaterialButton(
+          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(5.0) ),
           onPressed: onCancel,
-          child: Text(
+          color: Colors.black,
+          child: const Text(
             "Cancel",
             style: TextStyle(color: Colors.white),
           ),
-          color: Colors.black,
         ),
       ],
     );
